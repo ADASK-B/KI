@@ -1,82 +1,65 @@
-# FactsHub Serienstände Fehler und Lösungsvorschläge
+# Fehlerübersicht und Lösungsvorschläge aus FactsHub Serienständen
 
-## S21
-- Fehler: HMI freezes on job load (13) — A. Becker — In progress
-  - Lösungsvorschlag: Überarbeitung des HMI-Speicher- und Prozess-Managements, um das Einfrieren beim Laden von Jobs zu verhindern.
+## Serie S21
+- HMI freezes on job load (13)
+  - Lösungsvorschlag: Debugging des HMI Ladeprozesses, um Speicherlecks oder Deadlocks zu identifizieren und zu beheben.
+- Axis Y overcurrent fault (11)
+  - Lösungsvorschlag: Prüfen der Stromversorgung und Überlastschutz für Achse Y optimieren.
+- Laser head alignment drift (9)
+  - Lösungsvorschlag: Regelmäßige Kalibrierung der Laseroptik und Implementierung eines automatischen Nachjustiermechanismus.
+- Cooling unit low pressure (7)
+  - Lösungsvorschlag: Überprüfung der Kühlmittelkreisläufe auf Lecks und Verbesserung der Drucksensoren.
+- PLC watchdog reset (sporadic) (6)
+  - Lösungsvorschlag: Analyse der PLC Firmware und Hardware sowie Verbesserung der Watchdog-Timer-Konfiguration.
 
-- Fehler: Axis Y overcurrent fault (11) — Unassigned — Not started
-  - Lösungsvorschlag: Elektrische Überprüfung und Anpassung der Stromversorgungs- und Motortreiber-Komponenten der Y-Achse.
+## Serie K09
+- Barcode reader misreads (10)
+  - Lösungsvorschlag: Optimierung der Barcode-Lesealgorithmen und Verbesserung der Beleuchtung am Leser.
+- Door interlock sensor debounce (8)
+  - Lösungsvorschlag: Firmware-Update zur Entprellung des Sensors implementieren.
+- Dust filter delta-P high alarm (7)
+  - Lösungsvorschlag: Regelmäßige Wartung und Reinigung der Staubfilter und Kalibrierung der Drucksensoren.
+- Homing sequence timeout (Z) (6)
+  - Lösungsvorschlag: Überprüfung und Optimierung der Referenzfahrstrecke und Timeout-Einstellungen.
+- EtherCAT dropouts under load (5)
+  - Lösungsvorschlag: Verbesserung der Netzwerkstabilität und Überprüfung der Ethernet-Komponenten.
 
-- Fehler: Laser head alignment drift (9) — M. Nguyen — In progress
-  - Lösungsvorschlag: Entwicklung eines automatisierten Nachführsystems zur Kalibrierung und Justierung des Laserkopfes.
+## Serie L76
+- Cut quality variance on 8mm steel (17)
+  - Lösungsvorschlag: Anpassung der Schneidparameter und Verbesserung der Materialvorschubkontrolle.
+- Auto-focus calibration drift (14)
+  - Lösungsvorschlag: Implementierung von automatischen Kalibrierungszyklen für den Autofokus.
+- Temperature spikes in cabinet A (12)
+  - Lösungsvorschlag: Verbesserung der Belüftung und Temperaturüberwachung des Schaltschrankes.
+- Job queue loses last entry (9)
+  - Lösungsvorschlag: Überprüfung der Job-Queue-Implementierung und Sicherstellung der Datenpersistenz.
+- Axis X vibration @1.2g (8)
+  - Lösungsvorschlag: Analyse der mechanischen Komponenten und verbesserte Dämpfungssysteme.
 
-- Fehler: Cooling unit low pressure (7) — F. Rossi — Pending analysis
-  - Lösungsvorschlag: Detaillierte Analyse der Kühlmittelleitungen und -pumpen, um Lecks oder Blockaden zu identifizieren.
+## Serie S20
+- Vacuum pump low flow (9)
+  - Lösungsvorschlag: Wartung der Vakuumpumpe und Überprüfung der Schläuche auf Lecks.
+- UI localization missing strings (7)
+  - Lösungsvorschlag: Ergänzung fehlender Sprachdateien und Überprüfung der Lokalisierungsprozesse.
+- Edge detector false positives (6)
+  - Lösungsvorschlag: Anpassung der Sensor-Algorithmen und Filterparameter.
+- Power supply 24V dips (5)
+  - Lösungsvorschlag: Überprüfung der Stromversorgung und Einsatz von Spannungsstabilisatoren.
+- E-Stop reset race condition (4)
+  - Lösungsvorschlag: Überarbeitung der E-Stop Reset Logik zur Vermeidung von Race Conditions.
 
-- Fehler: PLC watchdog reset (sporadic) (6) — J. Park — In review
-  - Lösungsvorschlag: Verbesserung des Watchdog-Timings und Fehlersuche bei sporadischen Reset Ursachen.
+## Serie K14
+- Cooling loop air ingress (12)
+  - Lösungsvorschlag: Dichtigkeitsprüfung und Verbesserung der Kühlkreislaufabdichtung.
+- HMI crash on recipe import (11)
+  - Lösungsvorschlag: Debugging des Importprozesses und Verbesserung der Speicherverwaltung.
+- Servo drive tuning unstable (9)
+  - Lösungsvorschlag: Feinabstimmung der Servo-Regler-Parameter und Optimierung der Regelalgorithmen.
+- CAM post-processor mismatch (8)
+  - Lösungsvorschlag: Überprüfung und Anpassung der CAM-Postprozessor-Konfiguration.
+- Safety PLC checksum warning (6)
+  - Lösungsvorschlag: Validierung der PLC-Programmierteilupdates und Verbesserung der Prüfsummenlogik.
 
-## K09
-- Fehler: Barcode reader misreads (10) — L. Schmidt — In progress
-  - Lösungsvorschlag: Kalibrierung und Optimierung der Barcode-Scanner-Software und Hardware für höhere Erkennungsgenauigkeit.
+---
 
-- Fehler: Door interlock sensor debounce (8) — Unassigned — Not started
-  - Lösungsvorschlag: Implementierung einer Entprellungslogik in der Sensorsteuerung zur Vermeidung von Fehltriggerungen.
-
-- Fehler: Dust filter delta-P high alarm (7) — R. Patel — Planned
-  - Lösungsvorschlag: Überprüfung und Austausch des Staubfilters sowie Verbesserung der Alarmparameter für Delta-P Höhen.
-
-- Fehler: Homing sequence timeout (Z) (6) — K. Yamamoto — In progress
-  - Lösungsvorschlag: Optimierung der Homing-Sequenz mit Timeout-Erweiterung und verbesserter Fehlerbehandlung.
-
-- Fehler: EtherCAT dropouts under load (5) — T. Silva — In review
-  - Lösungsvorschlag: Analyse der Netzwerkbelastung und Stabilität, gegebenenfalls Einsatz von verbesserten Signalabschirmungen und Netzwerkkonfigurationen.
-
-## L76
-- Fehler: Cut quality variance on 8mm steel (17) — S. Wagner — In progress
-  - Lösungsvorschlag: Feinjustierung der Schneidparameter und Qualitätskontrolle durch automatische Messsysteme.
-
-- Fehler: Auto-focus calibration drift (14) — Unassigned — Not started
-  - Lösungsvorschlag: Einführung periodischer automatischer Nachkalibrierungszyklen der Auto-Fokus-Einheit.
-
-- Fehler: Temperature spikes in cabinet A (12) — O. Ivanov — In progress
-  - Lösungsvorschlag: Verbesserung der Belüftung und Temperaturüberwachung im Schrank A mit zusätzlichen Sensoren.
-
-- Fehler: Job queue loses last entry (9) — P. Hernandez — In review
-  - Lösungsvorschlag: Stabilisierung der Job-Queue-Management-Software und Implementierung zusätzlicher Sicherungen.
-
-- Fehler: Axis X vibration @1.2g (8) — C. Brown — Planned
-  - Lösungsvorschlag: Untersuchung und Behebung mechanischer Ursachen für die Vibrationen, z.B. Lager- oder Motorprobleme.
-
-## S20
-- Fehler: Vacuum pump low flow (9) — M. Fischer — In progress
-  - Lösungsvorschlag: Wartung und Reinigung der Vakuumpumpe sowie Überprüfung der Durchflusswege.
-
-- Fehler: UI localization missing strings (7) — Unassigned — Not started
-  - Lösungsvorschlag: Ergänzung und Korrektur der fehlenden Übersetzungstexte in der Benutzeroberfläche.
-
-- Fehler: Edge detector false positives (6) — E. Kim — In review
-  - Lösungsvorschlag: Feinjustierung der Kantendetektionsalgorithmen und Filterung der Störsignale.
-
-- Fehler: Power supply 24V dips (5) — D. Kowalski — In progress
-  - Lösungsvorschlag: Stabilisierung der 24V-Stromversorgung durch Netzfilter und Spannungsregler.
-
-- Fehler: E-Stop reset race condition (4) — J. Lee — Planned
-  - Lösungsvorschlag: Überarbeitung der E-Stop-Reset-Logik zur Vermeidung von Wettlaufsituationen.
-
-## K14
-- Fehler: Cooling loop air ingress (12) — Unassigned — Not started
-  - Lösungsvorschlag: Prüfung und Abdichtung der Kühlkreisläufe, Einführung von Entlüftungsventilen.
-
-- Fehler: HMI crash on recipe import (11) — A. Singh — In progress
-  - Lösungsvorschlag: Fehlersuche im Rezept-Import-Modul und Stabilitätsverbesserung der HMI-Software.
-
-- Fehler: Servo drive tuning unstable (9) — B. Müller — In progress
-  - Lösungsvorschlag: Feinabstimmung der Servoantriebsparameter und Verbesserung des Regelalgorithmus.
-
-- Fehler: CAM post-processor mismatch (8) — G. Chen — In review
-  - Lösungsvorschlag: Vergleich und Synchronisation der CAM-Postprozessor-Versionen im Team.
-
-- Fehler: Safety PLC checksum warning (6) — T. Novak — Planned
-  - Lösungsvorschlag: Implementierung erweiterter Prüfmechanismen und regelmäßiger Integritätschecks der PLC-Programme.
-
+*Diese Fehler und Lösungsvorschläge basieren auf den aktuellen Serienständen aus FactsHub.*
